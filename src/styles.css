@@ -1,0 +1,118 @@
+/* You can add global styles to this file, and also import other style files */
+.font {
+  font-family: 'Archivo', sans-serif;
+}
+
+body {
+  margin: 0;
+  --text-color: #f0f0f0;
+  --bkg-color: #222f3e;
+  --btn-bg-color: black;
+  --btn-txt-color: black;
+  --btn-bg-color-hover: rgb(116, 107, 107);
+  --bkg-color-dash: rgb(189, 190, 216);
+  --btn-color-dash: #395B64;
+  --btn-txt-color-dash: #ffffff;
+  --btn-color-dash-hover: #e6e6e6;
+  --btn-txt-color-dash-hover: rgb(3, 3, 3);
+  --bkg-color-footer: #111;
+  --bkg-color-footer-bottom: #000;
+  --footer-flicker-color: #f0f0f0;
+  --bkg-color-form: #344D67;
+  --form-btn: hsl(190deg, 30%, 15%);
+  --form-btn-text: hsl(190deg, 10%, 95%);
+  --form-invalid-text-msg: #f83e4b;
+  --bkg-color-form-forget-password: #62778f;
+}
+
+body::-webkit-scrollbar {
+  width: .5vw;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: rgba(27, 27, 27, 0.333);
+  border-radius: 100px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #161212;
+}
+
+body::-webkit-scrollbar-track {
+  background-color: #5555;
+}
+
+body::-webkit-scrollbar-track:hover {
+  background-color: #d3d3d3;
+}
+
+
+
+.light-theme {
+  --text-color: #000000;
+  --bkg-color: #9e8d8d;
+  --btn-bg-color: rgb(219, 219, 219);
+  --btn-bg-color-hover: #ECF2FF;
+  --bkg-color-dash: #FFF1DC;
+  --btn-color-dash: #e4f0ff;
+  --btn-txt-color-dash: #000000;
+  --btn-color-dash-hover: #000000cc;
+  --btn-txt-color-dash-hover: rgb(255, 255, 255);
+  --bkg-color-footer: #888888;
+  --bkg-color-footer-bottom: #000;
+  --footer-flicker-color: #f0f0f0;
+  --bkg-color-form: #DEF5E5;
+  --form-btn: #f3eae8;
+  --form-btn-text: hsl(198, 21%, 12%);
+  --form-invalid-text-msg: red;
+  --bkg-color-form-forget-password: #eaf8ef;
+}
+
+:root {
+  --x: 400px;
+  --y: 200px;
+  --media-query-width: 95%;
+
+  /* typewriter code in about me */
+  --bg-color: #2C3333;
+  --typewriterSpeed: 3s;
+  --typewriterCharacters: 26;
+
+}
+
+
+
+
+::ng-deep .my-tooltip {
+  /* // white-space: pre-line;
+  // width: 1500px;
+  // width: fit-content; */
+  max-width: unset !important;
+  white-space: pre-wrap;
+  font-size: 8px;
+}
+
+@media(max-width:600px) {
+  :root {
+    --x: 100px;
+    --y: 400px;
+  }
+
+
+}
+
+html,
+body {
+  height: 100%;
+  /*angular scrool to top during route without animation */
+  scroll-behavior: auto !important;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+
+
+

@@ -1,0 +1,422 @@
+/* CSS for footer on bottom  */
+.main-container {
+  min-height: 50vh;
+  border: 2px solid black;
+  display: flex;
+}
+
+#tools {
+  border: 2px solid rgb(0, 0, 0);
+  height: 100vh;
+  width: 20%;
+  margin: 30px 0px 30px 0px;
+  overflow-y: auto;
+  border-radius: 5px;
+}
+
+
+.color-section {
+  width: 100%;
+}
+
+span{
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+.color-section p {
+  margin: 0px 3px 3px 3px;
+}
+
+.colors {
+  margin: 0px 3px 3px 3px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(40px, 5fr));
+  /* Responsive grid columns */
+  grid-gap: 0px;
+  /* Adjust the gap between grid items */
+}
+
+
+.color {
+  border: 1px solid rgb(0, 0, 0);
+  height: 40px;
+}
+
+.custom-pick-color {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 0px 3px;
+}
+
+
+
+.colorpicker {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 0px 0px 5px 10px;
+}
+
+.custom-pick-color span {
+  width: 60%;
+}
+
+.custom-pick-background-color {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 0px 3px;
+}
+
+.custom-pick-background-color span {
+  width: 60%;
+}
+
+.backgroundcolorpicker {
+  appearance: none;
+  width: 40px;
+  height: 40px;
+  border: none;
+  margin: 0px 0px 5px 10px;
+}
+
+.brush-section {
+  width: 100%;
+}
+
+.brush-size {
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 10px 3px;
+}
+
+.brush-size-range {
+  margin-top: 5px;
+  width: 70%;
+}
+
+.eraser-section {
+  width: 100%;
+}
+
+.eraser {
+  margin-left: 10px;
+}
+
+.eraser-subsection {
+  margin: 20px 0px 10px 3px;
+}
+
+.canvas {
+  height: 0 auto;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+canvas {
+  border-style: double;
+  margin: 30px 0px 0px 0px;
+  height: 100vh;
+  border-radius:25px;
+}
+
+.btn-svg {
+  display: none;
+}
+
+
+.canvas-button-save {
+  display: flex;
+  justify-content: center;
+  width: 90%;
+  padding: 10px 0px 10px 0px;
+}
+
+.button-clear-canvas {
+  --main-focus: #2d8cf0;
+  --font-color: #323232;
+  --bg-color-sub: #dedede;
+  --bg-color: #eee;
+  --main-color: #323232;
+  position: relative;
+  width: 150px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--main-color);
+  box-shadow: 4px 4px var(--main-color);
+  background-color: var(--bg-color);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.button-clear-canvas,
+.button__icon,
+.button__text {
+  transition: all 0.3s;
+}
+
+.button-clear-canvas .button__text {
+  transform: translateX(33px);
+  color: var(--font-color);
+  font-weight: 600;
+}
+
+.button-clear-canvas .button__icon {
+  position: absolute;
+  transform: translateX(109px);
+  height: 100%;
+  width: 39px;
+  background-color: var(--bg-color-sub);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-clear-canvas .svg {
+  width: 20px;
+  fill: var(--main-color);
+}
+
+.button-clear-canvas:hover {
+  background: var(--bg-color);
+}
+
+.button-clear-canvas:hover .button__text {
+  color: transparent;
+}
+
+.button-clear-canvas:hover .button__icon {
+  width: 148px;
+  transform: translateX(0);
+}
+
+.button-clear-canvas:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 0px var(--main-color);
+}
+
+
+.button-save {
+  outline: none;
+  cursor: pointer;
+  border: none;
+  padding: 0.9rem 2rem;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  position: relative;
+  display: inline-block;
+  letter-spacing: 0.05rem;
+  font-weight: 700;
+  font-size: 17px;
+  border-radius: 500px;
+  overflow: hidden;
+  background: #66ff66;
+  color: ghostwhite;
+}
+
+.button-save span {
+  position: relative;
+  z-index: 10;
+  transition: color 0.4s;
+}
+
+.button-save:hover span {
+  color: black;
+}
+
+.button-save::before,
+.button-save::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.button-save::before {
+  content: "";
+  background: #000;
+  width: 120%;
+  left: -10%;
+  transform: skew(30deg);
+  transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.button-save:hover::before {
+  transform: translate3d(100%, 0, 0);
+}
+
+
+
+@media(max-width:1028px) {
+
+  .canvas {
+    width: 99%;
+  }
+
+  #tools {
+    border: 2px solid rgb(0, 0, 0);
+    min-height: 100vh;
+    height: 0 auto;
+    width: 200px;
+    margin: 30px 0px 30px 0px;
+    padding-top: 2px;
+    position: absolute;
+    overflow-y: unset;
+    background-color: white;
+    left: -200px;
+    transition: .4s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  #toggle-btn {
+    position: absolute;
+    top: 0px;
+    left: 210px;
+    z-index: 2;
+    transform: rotate(90deg);
+    transition: .4s;
+  }
+
+
+
+  #toggle-btn .btn-svg {
+    display: unset;
+    width: 45px;
+    /* height: 4px; */
+    background: transparent;
+    margin-top: 4px;
+    animation:  rotate 10s linear infinite;
+    transform-origin: center;
+    /* Add a shadow effect */
+  }
+
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+  #tools.active {
+    left: 0;
+  }
+
+  #toggle-btn.active {
+    transform: unset;
+    top: 0px;
+    left: 200px;
+  }
+
+  .brush-size {
+    flex-direction: column;
+    align-items: unset;
+    margin-left: 3px;
+  }
+
+  .brush-size-range {
+    margin: 5px 0px 0px 3px;
+    width: 80%;
+  }
+
+}
+
+
+@media(max-width:600px) {
+  .main-container {
+    border: none;
+  }
+
+  #tools {
+    border: 2px solid rgb(0, 0, 0);
+    min-height: 100vh;
+    height: 0 auto;
+    width: 200px;
+    margin: 0px;
+    padding-top: 2px;
+    position: absolute;
+    overflow-y: unset;
+    background-color: white;
+    left: -200px;
+    transition: .4s;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  #toggle-btn {
+    position: absolute;
+    top: 0px;
+    left: 210px;
+    z-index: 2;
+    transform: rotate(90deg);
+    transition: .4s;
+  }
+
+
+
+  #toggle-btn .btn-svg {
+    display: unset;
+    width: 45px;
+    /* height: 4px; */
+    background: transparent;
+    margin-top: 4px;
+    animation:  rotate 10s linear infinite;
+    transform-origin: center;
+    /* Add a shadow effect */
+  }
+
+  @keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+  #tools.active {
+    left: 0;
+  }
+
+  #toggle-btn.active {
+    transform: unset;
+    top: 0px;
+    left: 200px;
+  }
+
+  .canvas {
+    width: 95%;
+  }
+
+  canvas {
+    margin: 0px;
+    border: 2px solid black;
+    border-radius: 5px;
+  }
+
+  .custom-pick-color span {
+    width: 60%;
+  }
+
+
+  .custom-pick-background-color span {
+    width: 60%;
+  }
+
+
+}

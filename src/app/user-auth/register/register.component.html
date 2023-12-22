@@ -1,0 +1,185 @@
+<appheader></appheader>
+<app-dashboard></app-dashboard>
+<div class= "main-container-register">
+    <div class="Main">
+      <div class="register-header-text">
+        <h1 class="prevent-select">Create your account here</h1>
+      </div>
+      
+      <form class="form" [formGroup]="registerForm" (ngSubmit)="registerUser()" enctype="multipart/form-data">
+        
+
+        <!-- Upload Image -->
+        <div class="profile-pic-section">
+          <img  [src]="cropImagePreview || defaultImageUrl"  class="defaultAvatar fixed-size-image" id="uploadPreview">
+          <input class="input-profile-pic" type="file" accept="image/*" (change)="changeonImage($event)" 
+          formControlName="uploadImage">
+          <div *ngIf="showCropper" id="cropperDiv" class="cropperDiv">
+            <image-cropper
+              [imageChangedEvent]="imgChangeEvt"
+              [aspectRatio]="4/4"
+              [maintainAspectRatio]="true"
+              [resizeToWidth]="256"
+              format="jpeg"
+              (imageCropped)="cropImg($event)"
+              (imageLoaded)="imgLoad()"
+              (cropperReady)="initCropper()"
+              (loadImageFailed)="imgFailed()"
+              >
+            </image-cropper>
+            <button class="closeCropper" (click)="closeCropper()">Close Cropper</button>
+          </div>
+        </div>
+
+        <!-- Upload Image  valid text field -->
+        <div class="input-invalid-text-register" >
+           <span *ngIf="uploadImageValidator && uploadImageValidator.invalid && uploadImageValidator.touched">Please upload your image</span>
+        </div>
+
+
+        <div class="fullname">
+
+          <div class="div-common-style-for-valid-text">
+            <!-- First Name -->
+            <div class="firstname div-form">
+              <input class="form-field"  type="text" placeholder="First Name" 
+              formControlName="firstName" (keypress)="onlyAlphabets($event)">
+            </div>
+
+            <!-- First Name  valid text field-->
+            <div class="input-invalid-text-register" >
+              <span *ngIf="firstNameValidator && firstNameValidator.invalid && firstNameValidator.touched">Enter a valid First Name</span>
+            </div>
+          </div>
+
+          <div class="div-common-style-for-valid-text">
+            <!--Last Name -->
+            <div class="lastname div-form">
+              <input class="form-field" type="text"placeholder="Last Name"
+              formControlName="lastName" (keypress)="onlyAlphabets($event)">
+            </div>
+
+            <!-- Last Name  valid text field-->
+            <div class="input-invalid-text-register" >
+              <span *ngIf="lastNameValidator && lastNameValidator.invalid && lastNameValidator.touched">Enter a valid Last Name</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Username -->
+        <div class="username div-form">
+          <input class="form-field" type="text" placeholder="Username"  
+          formControlName="username" (keypress)="onlyAlphabetsAndNumbers($event)">
+        </div>
+
+        <!-- Username valid text field-->
+        <div class="input-invalid-text-register" >
+          <span *ngIf="usernameValidator && usernameValidator.invalid && usernameValidator.touched">Enter a valid Username</span>
+        </div>    
+
+
+
+        <div class="password">
+          <div class="div-common-style-for-valid-text">
+            <!-- Main Password -->
+            <div class="main-password div-form">
+              <input class="form-field" type="password" placeholder="Password" id="mainPasswordID"
+              formControlName="password" (keyup)="checkPassword(confirmPasswordID.value)">
+            </div>
+            <!-- Main Password valid text field-->
+            <div class="input-invalid-text-register" >
+              <span *ngIf="mainPasswordValidator && mainPasswordValidator.invalid && mainPasswordValidator.touched">{{toolTip}}</span>
+            </div>
+          </div>
+
+          <div class="div-common-style-for-valid-text">  
+              <!-- Confirm Password -->
+              <div class="confirm-password div-form">
+                <input class="form-field" type="password" placeholder="Confirm Password" id="confirmPasswordID" #confirmPasswordID
+                formControlName="confirmPassword" (keyup)="checkPassword(confirmPasswordID.value)">
+              </div>
+
+              <!-- confirm Password valid text field-->
+              <div class="input-invalid-text-register" >
+                <span *ngIf="PasswordFieldValidator?.invalid && PasswordFieldValidator?.touched && !registerForm.get('confirmPassword')?.hasError('mismatch')">Enter a valid password</span>
+              </div>         
+
+              <!-- confirm Password valid text field -->
+              <div class="input-invalid-text-register" >
+                <span  *ngIf="registerForm.get('confirmPassword')?.hasError('mismatch') && registerForm.get('confirmPassword')?.touched">Password and confirm password not matching</span>
+              </div>         
+          </div>
+        </div>
+
+        <!-- Show Password -->
+        <div class="showpassword div-form">
+            <label class="label-field" for="show-pass" (click)="passwordfield()">Show Password</label>
+            <input type="checkbox" class="show-pass-checkbox" id="show-pass"  value="show-password" 
+            formControlName="showPassword" (click)="passwordfield()"
+            >
+        </div>
+
+        <!-- Email -->
+        <div class="email div-form">
+          <input class="form-field" type="email" id="email" placeholder="E-mail"
+          formControlName="email">
+        </div>
+
+        <!-- Email valid text field-->
+        <div class="input-invalid-text-register" >
+          <span *ngIf="emailValidator && emailValidator.invalid && emailValidator.touched">Enter a valid Email</span>
+        </div>            
+
+        <!-- Phone Number -->
+        <div class="phone-number div-form">
+          <select id="countryCode" name="countryCode" class="countrycode" *ngIf="jsonData" formControlName="phoneNumberCode">
+            <option class="selectBoxOptions" *ngFor="let country of jsonData.countries" value={{country.code}}>{{country.name}} {{country.code}}</option>
+          </select>
+          <input class="form-field" type="tel" id="phone" placeholder="Phone-Number" maxlength="15"
+          formControlName="phoneNumber" (keypress)="onlyNumbers($event)">
+        </div>
+
+        <!-- Phone Number valid text field-->
+        <div class="input-invalid-text-register" >
+          <span *ngIf="phoneNumberValidator && phoneNumberValidator.invalid && phoneNumberValidator.touched">Enter a valid Phone Number</span>
+        </div>  
+
+               
+
+        <!-- Gender -->
+        <div class="gender div-form">
+          <label style="font-weight: bold;">Gender</label>
+          <input class="radio-gender" type="radio" id="Male" value="Male" name="gender"  
+          formControlName="gender">
+          <label class="radio-gender" for="Male">Male</label>
+          <input class="radio-gender" type="radio" id="Female" value="Female" name="gender" 
+          formControlName="gender">
+          <label class="radio-gender" for="Female">Female</label>
+        </div>
+
+        <!-- DOB -->
+        <div class="DOB div-form">
+          <Label style="font-weight: bold;">Enter Date of Birth</Label>
+          <input class="date-dob" type="date" id="start" name="trip-start" value="yyyy-mm-dd"
+          formControlName="dob">
+        </div>
+
+        <!-- DOB valid text field-->
+        <div class="input-invalid-text-register" >
+          <span *ngIf="dobValidator && dobValidator.invalid && dobValidator.touched">Enter a valid Date of Birth</span>
+        </div>         
+
+
+        <!-- Register Button -->
+        <div class="Register div-form">
+          <button class="register-btn" type="submit" >Register</button>
+        </div>
+
+      </form>
+    </div>
+    <div class="side">
+      <img  src="assets/images/test3.png" (click)="imgClick()" id="Image">
+      <img  src="assets/images/test1.png" class="imageHide" id="Image1">
+    </div>
+</div>
+<app-footer></app-footer>

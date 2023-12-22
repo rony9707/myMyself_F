@@ -1,0 +1,17 @@
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  width: 100%;
+  height:100%;
+}
+
+.svg_cat {
+  width: 80%;
+}
+
+@media(max-width:600px) {
+  .svg_cat {
+    width: 100%;
+  }
+}

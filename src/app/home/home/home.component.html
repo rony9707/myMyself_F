@@ -1,0 +1,76 @@
+<appheader></appheader>
+<app-dashboard></app-dashboard>
+<div class= "main-container">
+  <div class="tools" id="tools">
+      <div id="toggle-btn" (click)="showTools()">
+      <svg version="1.1" class="btn-svg" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0" y="0" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500" xml:space="preserve"><style>.st0{fill:#000000}.st1{fill:#1c1d21}</style><path class="st0" d="m426.7 113.6 12.4-1.9c6.8-1 12.7-5.3 15.8-11.4l19.2-37.8-17.4-17.4-37.8 19.2c-6.1 3.1-10.4 9-11.4 15.8l-1.9 12.4c-.9 5.8 1.1 11.7 5.2 15.9 4.2 4.1 10.1 6 15.9 5.2z"/><path class="st1" d="M424 118.8c-6.2 0-12.2-2.5-16.7-6.9-5.3-5.3-7.7-12.8-6.6-20.2l1.9-12.4c1.3-8.4 6.5-15.7 14.1-19.5l37.8-19.2c1.9-1 4.3-.6 5.8.9l17.4 17.4c1.5 1.5 1.9 3.9.9 5.8l-19.2 37.8c-3.8 7.6-11.1 12.8-19.5 14.1l-12.4 1.9c-1.2.2-2.4.3-3.5.3zm2.7-5.2zm29-62.4-34.5 17.5c-4.7 2.4-8 6.9-8.7 12.1l-1.9 12.4c-.6 4.2.8 8.6 3.8 11.6s7.4 4.5 11.6 3.8l12.4-1.9c5.2-.8 9.7-4.1 12.1-8.7L468 63.4l-12.3-12.2z"/><path d="m199 379.1-59-59 21.4-21.4c5.4-5.4 14.1-5.4 19.5 0l39.5 39.5c5.4 5.4 5.4 14.1 0 19.5L199 379.1z" style="fill:#000000"/><path class="st1" d="M199 384.1c-1.3 0-2.6-.5-3.5-1.5l-59-59c-.9-.9-1.5-2.2-1.5-3.5 0-1.3.5-2.6 1.5-3.5l21.4-21.4c3.5-3.6 8.3-5.5 13.3-5.5s9.7 2 13.3 5.5l39.5 39.5c7.3 7.3 7.3 19.3 0 26.6l-21.4 21.4c-1 .9-2.2 1.4-3.6 1.4zm-51.9-64L199 372l17.9-17.9c1.7-1.7 2.6-3.9 2.6-6.2s-.9-4.6-2.6-6.2l-39.5-39.5c-1.7-1.7-3.9-2.6-6.2-2.6s-4.6.9-6.2 2.6l-17.9 17.9z"/><path d="M187.5 379c7.2-1 11.6.2 11.6.2l-59-59s1.1 4.4.2 11.6c-2.2 16.2-15.8 28.2-32.1 29.8-6.5.6-12.8 3.5-17.8 8.4l-55.7 55.7c-11.5 11.5-11.5 30 0 41.5l17.5 17.5c11.5 11.5 30 11.5 41.5 0l35.6-35.6c5-5 27.9-31.5 28.6-38 1.4-16.3 13.3-29.9 29.6-32.1z" style="fill:#000000"/><path class="st1" d="M72.8 498.2c-9.2 0-17.8-3.6-24.3-10.1L31 470.6c-13.4-13.4-13.4-35.2 0-48.5l55.7-55.7c5.6-5.6 13-9.1 20.9-9.9 14.4-1.4 25.8-11.9 27.7-25.5.8-6 0-9.6-.1-9.7-.5-2.2.5-4.5 2.4-5.6 2-1.1 4.4-.8 6 .8l59 59c1.6 1.6 1.9 4.1.8 6-1.1 2-3.4 2.9-5.6 2.4 0 0-3.7-.9-9.6 0-13.6 1.8-24 13.2-25.5 27.7-1 9.7-29.7 40.7-30 41l-35.6 35.6c-6.5 6.4-15.1 10-24.3 10zm72.3-165.9c-2.5 18.2-17.5 32.2-36.6 34.1-5.6.6-10.7 3-14.8 7L38 429.1c-9.5 9.5-9.5 24.9 0 34.4L55.5 481c9.5 9.5 24.9 9.5 34.4 0l35.6-35.6c6.6-6.6 26-29.9 27.1-35 1.9-19 15.9-34 34.1-36.5l-41.6-41.6zm7.6 78.3z"/><path class="st1" d="M43.3 480.8c-1.3 0-2.6-.5-3.5-1.5-2-2-2-5.1 0-7.1l26.4-26.4c2-2 5.1-2 7.1 0s2 5.1 0 7.1l-26.4 26.4c-1 1.1-2.3 1.5-3.6 1.5zM87.9 436.3c-1.3 0-2.6-.5-3.5-1.5-2-2-2-5.1 0-7.1l35.9-35.9c2-2 5.1-2 7.1 0s2 5.1 0 7.1l-35.9 35.9c-1.1 1-2.4 1.5-3.6 1.5zM139.1 385c-1.3 0-2.6-.5-3.5-1.5-2-2-2-5.1 0-7.1l4.8-4.8c2-2 5.1-2 7.1 0s2 5.1 0 7.1l-4.8 4.8c-1 1-2.3 1.5-3.6 1.5zM200.7 323.5c-1.3 0-2.6-.5-3.5-1.5-2-2-2-5.1 0-7.1l210.1-210.1c2-2 5.1-2 7.1 0s2 5.1 0 7.1L204.2 322c-1 1-2.2 1.5-3.5 1.5z"/><g><path class="st0" d="M126.6 38.7 98.8 10.9C91 3 78.2 3 70.3 10.9c-7.9 7.9-7.9 20.6 0 28.5l17.2 17.2c4.6 4.6 6.9 10.9 6.3 17.4-.9 10.6-9.3 19-19.9 19.9-6.5.6-12.8-1.8-17.4-6.3L39.4 70.3c-7.9-7.9-20.6-7.9-28.5 0C3 78.2 3 91 10.9 98.8l27.8 27.8c4.1 4.1 9.7 6.4 15.5 6.4H85c5.8 0 11.4 2.3 15.5 6.4l260.1 260.1c4.1 4.1 6.4 9.7 6.4 15.5v30.8c0 5.8 2.3 11.4 6.4 15.5l27.8 27.8c7.9 7.9 20.6 7.9 28.5 0 7.9-7.9 7.9-20.6 0-28.5l-17.2-17.2c-4.6-4.6-6.9-10.9-6.3-17.4.9-10.6 9.3-19 19.9-19.9 6.5-.6 12.8 1.8 17.4 6.3l17.2 17.2c7.9 7.9 20.6 7.9 28.5 0 7.9-7.9 7.9-20.6 0-28.5l-27.8-27.8c-4.1-4.1-9.7-6.4-15.5-6.4H415c-5.8 0-11.4-2.3-15.5-6.4l-260-260c-4.1-4.1-6.4-9.7-6.4-15.5V54.2c-.1-5.8-2.4-11.4-6.5-15.5z"/><path class="st1" d="M415.4 500c-6.7 0-13-2.6-17.8-7.4l-27.8-27.8c-5.1-5.1-7.9-11.8-7.9-19V415c0-4.5-1.8-8.8-5-12L97 143c-3.2-3.2-7.4-5-12-5H54.2c-7.2 0-13.9-2.8-19-7.9L7.4 102.4C2.6 97.6 0 91.3 0 84.6s2.6-13 7.4-17.8c4.7-4.7 11.1-7.4 17.8-7.4 6.7 0 13 2.6 17.8 7.4L60.1 84c3.5 3.5 8.4 5.3 13.4 4.9 8.2-.7 14.6-7.2 15.4-15.4.4-5-1.3-9.9-4.9-13.4L66.8 42.9c-4.7-4.7-7.4-11.1-7.4-17.8 0-6.7 2.6-13 7.4-17.8C71.6 2.6 77.9 0 84.6 0s13 2.6 17.8 7.4l27.8 27.8c5.1 5.1 7.9 11.8 7.9 19V85c0 4.5 1.8 8.8 5 12L403 357c3.2 3.2 7.4 5 12 5h30.8c7.2 0 13.9 2.8 19 7.9l27.8 27.8c4.7 4.7 7.4 11.1 7.4 17.8s-2.6 13-7.4 17.8c-4.7 4.7-11.1 7.4-17.8 7.4-6.7 0-13-2.6-17.8-7.4L439.9 416c-3.5-3.5-8.4-5.3-13.4-4.9-8.2.7-14.6 7.2-15.4 15.4-.4 5 1.3 9.9 4.9 13.4l17.2 17.2c4.7 4.7 7.4 11.1 7.4 17.8 0 6.7-2.6 13-7.4 17.8-4.8 4.7-11.1 7.3-17.8 7.3zM25.1 69.4c-4 0-7.8 1.6-10.7 4.4-2.9 2.9-4.4 6.7-4.4 10.7s1.6 7.8 4.4 10.7L42.2 123c3.2 3.2 7.4 4.9 12 4.9H85c7.2 0 13.9 2.8 19 7.9L364.1 396c5.1 5.1 7.9 11.8 7.9 19v30.8c0 4.5 1.8 8.8 4.9 12l27.8 27.8c2.9 2.9 6.7 4.4 10.7 4.4 4 0 7.8-1.6 10.7-4.4 2.9-2.9 4.4-6.7 4.4-10.7 0-4-1.6-7.8-4.4-10.7L408.9 447c-5.6-5.6-8.5-13.4-7.8-21.4 1.1-13 11.4-23.3 24.4-24.4 7.9-.7 15.7 2.1 21.4 7.8l17.2 17.2c2.9 2.9 6.7 4.4 10.7 4.4 4 0 7.8-1.6 10.7-4.4 2.9-2.9 4.4-6.7 4.4-10.7 0-4-1.6-7.8-4.4-10.7L457.7 377c-3.2-3.2-7.4-4.9-12-4.9H415c-7.2 0-13.9-2.8-19-7.9L135.9 104c-5.1-5.1-7.9-11.8-7.9-19V54.2c0-4.5-1.8-8.8-4.9-12L95.3 14.4c-2.9-2.9-6.7-4.4-10.7-4.4s-7.8 1.6-10.7 4.4c-2.9 2.9-4.4 6.7-4.4 10.7 0 4 1.6 7.8 4.4 10.7L91.1 53c5.6 5.6 8.5 13.4 7.8 21.4-1.1 13-11.4 23.3-24.4 24.4-7.9.7-15.7-2.1-21.4-7.8L35.8 73.9c-2.8-2.9-6.6-4.5-10.7-4.5z"/></g></svg>
+      </div>
+      <div class="color-section">
+        <p><span>Colors</span></p>
+        <div class="colors">
+          <div class="red color" style="background-color: #FF0000;" (click)="clickColor('#FF0000')" value="red" id="red"></div>
+          <div class="blue color" style="background-color: #0000FF;" (click)="clickColor('#0000FF')" value="blue" id="blue"></div>
+          <div class="green color" style="background-color: #008000;" (click)="clickColor('#008000')" value="green" id="green"></div>
+          <div class="yellow color" style="background-color: #FFFF00;" (click)="clickColor('#FFFF00')" value="yellow" id="yellow"></div>
+          <div class="orange color" style="background-color: #FF5F15;" (click)="clickColor('#FF5F15')" value="orange" id="orange"></div>
+          <div class="brown color" style="background-color: #964B00;" (click)="clickColor('#964B00')" value="brown" id="brown"></div>
+          <div class="pink color" style="background-color: #FFC0CB;" (click)="clickColor('#FFC0CB')" value="pink" id="pink"></div>
+          <div class="purple color" style="background-color: #800080;" (click)="clickColor('#800080')" value="purple" id="purple"></div>
+          <div class="black color" style="background-color: #000000;" (click)="clickColor('#000000')" value="black" id="black"></div>
+          <div class="white color" style="background-color: #FFFFFF" (click)="clickColor('#FFFFFF')" value="white" id="white"></div>
+          <div class="aqua color" style="background-color: #00FFFF" (click)="clickColor('#00FFFF')" value="aqua" id="aqua"></div>
+          <div class="bisque color" style="background-color: #ffe4c4" (click)="clickColor('#ffe4c4')" value="bisque" id="bisque"></div>
+          <div class="darkgrey color" style="background-color: #5A5A5A" (click)="clickColor('#5A5A5A')" value="darkgrey" id="darkgrey"></div>
+          <div class="gold color" style="background-color: #FFD700" (click)="clickColor('#FFD700')" value="gold" id="gold"></div>
+          <div class="darkslategray color" style="background-color: #2f4f4f" (click)="clickColor('#2f4f4f')" value="darkslategray" id="darkslategray"></div>
+          <div class="magenta color" style="background-color: #FF00FF" (click)="clickColor('#FF00FF')" value="magenta" id="magenta"></div>
+          <div class="lightgreen color" style="background-color: #90EE90" (click)="clickColor('#90EE90')" value="lightgreen" id="lightgreen"></div>
+          <div class="indianred color" style="background-color: #cd5c5c" (click)="clickColor('#cd5c5c')" value="indianred" id="indianred"></div>
+        </div>
+        <div class="custom-pick-color">
+          <span>Choose a color</span><input type="color" id="colorpicker" class="colorpicker"  [(ngModel)]="colorPicked"  (input)="pickCustomerColor()" >
+        </div>
+      </div>
+
+      <div class="background-color-section">
+        <div class="custom-pick-background-color">
+          <span>Choose a backgroud color</span><input type="color" id="backgroundColorPicker" class="backgroundcolorpicker" [(ngModel)]="bgColor" (input)="pickBackgroudColor()" >
+        </div>
+      </div>
+
+      <div class="eraser-section">
+        <div class="eraser-subsection">
+          <span>Use a eraser </span><svg class="eraser" (click)="eraser()" value="white" id="eraser" xmlns="http://www.w3.org/2000/svg" height="1.5em" viewBox="0 0 576 512"><path d="M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7H288h9.4H512c17.7 0 32-14.3 32-32s-14.3-32-32-32H387.9L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416H288l-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z"/></svg>
+        </div>
+
+        <div class="eraser-subsection">
+          <button type="button" class="button-clear-canvas" (click)="clearCanvas()">
+            <span class="button__text">Delete</span>
+            <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="512" viewBox="0 0 512 512" height="512" class="svg"><title></title><path style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M112,112l20,320c.95,18.49,14.4,32,32,32H348c17.67,0,30.87-13.51,32-32l20-320"></path><line y2="112" y1="112" x2="432" x1="80" style="stroke:#323232;stroke-linecap:round;stroke-miterlimit:10;stroke-width:32px"></line><path style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px" d="M192,112V72h0a23.93,23.93,0,0,1,24-24h80a23.93,23.93,0,0,1,24,24h0v40"></path><line y2="400" y1="176" x2="256" x1="256" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="192" x1="184" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line><line y2="400" y1="176" x2="320" x1="328" style="fill:none;stroke:#323232;stroke-linecap:round;stroke-linejoin:round;stroke-width:32px"></line></svg></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="brush-section">
+        <div class="brush-size">
+          <span>Choose a brush size</span><input type="range" class="brush-size-range" id="brush-slider" [(ngModel)]="brushSize"  (input)="pickSliderValue()">
+        </div>
+      </div>
+
+  </div>
+  <div class="canvas" id="canvas-container">
+    <canvas #myCanvas id="canvas">
+      
+    </canvas> 
+    <div class="canvas-button-save">
+      <button id="saveButton" (click)="saveImage()" class="button-save"> 
+        <span>
+          Save
+        </span> 
+      </button>
+    </div>
+  </div>
+
+
+</div>
+<app-footer></app-footer>

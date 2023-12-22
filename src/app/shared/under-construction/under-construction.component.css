@@ -1,0 +1,52 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.body {
+  background: #000;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  clip-path: circle(200px at var(--x) var(--y));
+  height: 100vh;
+  background-color: rgb(91, 216, 112);
+}
+
+.img {
+  width: 100%;
+  height: 0 auto;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  font-size: 6em;
+  cursor: default;
+}
+
+@media( max-width:600px) {
+  section {
+      position: relative;
+      width: 100%;
+      background-size: cover;
+      clip-path: circle(120px at var(--x) var(--y));
+  }
+  h1 {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      width: 100%;
+      font-size: 2em;
+      cursor: default;
+  }
+}

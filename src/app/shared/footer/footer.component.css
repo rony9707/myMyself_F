@@ -1,0 +1,335 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.footer {
+  background: var(--bkg-color-footer);
+  height: auto;
+  width: 100%;
+  padding-top: 10px;
+  color: var(--text-color);
+}
+
+/* @media( max-width:600px) {
+  .footer {
+    position: relative;
+    bottom: 0;
+  }
+} */
+
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.footer-content h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  line-height: 3rem;
+}
+
+.footer-content p {
+  max-width: 500px;
+  margin: 10px auto;
+  line-height: 28px;
+  font-size: 14px;
+}
+
+.socials {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.socials li {
+  margin: 0 10px;
+  width: 50px;
+}
+
+.socials a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.socials a i {
+  font-size: 1.5rem;
+  transition: color .4s ease;
+}
+
+.socials a:hover i {
+  color: rgb(224, 215, 255);
+}
+
+.footer-bottom {
+  background: var(--bkg-color-footer-bottom);
+  width: 100%;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  font-size: 14px;
+  word-spacing: 2px;
+  text-transform: capitalize;
+  color: #f0f0f0;
+}
+
+.footer-bottom span {
+  /* text-transform: uppercase;
+  opacity: .4;
+  font-weight: 200; */
+  opacity: 0.15;
+  letter-spacing: 1.5em;
+}
+
+#I {
+  opacity: 1;
+  animation: flickerI 2s linear reverse infinite;
+}
+
+#I::after {
+  content: '';
+  width: 150%;
+  -webkit-box-shadow: -35px 0px 60px 8px var(--footer-flicker-color);
+  -moz-box-shadow: -35px 0px 60px 8px var(--footer-flicker-color);
+  box-shadow: -35px 0px 60px 8px var(--footer-flicker-color);
+}
+
+#L {
+  padding-left: 10px;
+}
+
+#L,
+#G {
+  animation: flickerLG 2s linear reverse infinite;
+  position: relative;
+}
+
+#L::after,
+#L::after {
+  width: 200px;
+  height: 200px;
+  top: -150%;
+  left: -5%;
+  opacity: 0.1;
+  filter: blur(10px);
+}
+
+#H {
+  animation: flickerH 2s linear reverse infinite
+}
+
+#T {
+  animation: flickerH 2s linear reverse infinite
+}
+
+@keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+
+  5% {
+    opacity: 0.5;
+  }
+
+  10% {
+    opacity: 0.6;
+  }
+
+  15% {
+    opacity: 0.85;
+  }
+
+  25% {
+    opacity: 0.5;
+  }
+
+  30% {
+    opacity: 1;
+  }
+
+  35% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.25;
+  }
+
+  45% {
+    opacity: 0.5;
+  }
+
+  60% {
+    opacity: 1;
+  }
+
+  70% {
+    opacity: 0.85;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickerLG {
+  0% {
+    opacity: 0.19;
+  }
+
+  5% {
+    opacity: 0.2;
+  }
+
+  10% {
+    opacity: 0.25;
+  }
+
+  15% {
+    opacity: 0.35;
+  }
+
+  25% {
+    opacity: 0.2;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  35% {
+    opacity: 0.1;
+  }
+
+  40% {
+    opacity: 0.25;
+  }
+
+  45% {
+    opacity: 0.2;
+  }
+
+  60% {
+    opacity: 0.4;
+  }
+
+  70% {
+    opacity: 0.35;
+  }
+
+  80% {
+    opacity: 0.4;
+  }
+
+  90% {
+    opacity: 0.2;
+  }
+
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes flickerH {
+  0% {
+    opacity: 0.15;
+  }
+
+  5% {
+    opacity: 0.2;
+  }
+
+  10% {
+    opacity: 0.12;
+  }
+
+  15% {
+    opacity: 0.2;
+  }
+
+  25% {
+    opacity: 0.15;
+  }
+
+  30% {
+    opacity: 0.4;
+  }
+
+  35% {
+    opacity: 0.05;
+  }
+
+  40% {
+    opacity: 0.12;
+  }
+
+  45% {
+    opacity: 0.15;
+  }
+
+  60% {
+    opacity: 0.3;
+  }
+
+  70% {
+    opacity: 0.2;
+  }
+
+  80% {
+    opacity: 0.3;
+  }
+
+  90% {
+    opacity: 0.18;
+  }
+
+  100% {
+    opacity: 0.3;
+  }
+}
+
+.name-footer:hover {
+  transition: margin 0.3s ease;
+}
+
+.name-footer:hover {
+  color: Red;
+  margin-right: 5px;
+  margin-left: 5px;
+}
+
+.prevent-select {
+  -webkit-user-select: none;
+  /* Safari */
+  -ms-user-select: none;
+  /* IE 10 and IE 11 */
+  user-select: none;
+  /* Standard syntax */
+}
+
+
+@media(max-width:600px) {
+  .socials a i {
+    font-size: 1rem;
+    transition: color .4s ease;
+  }
+
+}

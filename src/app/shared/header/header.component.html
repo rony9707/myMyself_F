@@ -1,0 +1,21 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Pacifico&family=Permanent+Marker&display=swap" rel="stylesheet">
+<div class="header">
+  <div class="site-title prevent-select">
+      <!-- <logo class="logo"></logo> -->
+      <h1  routerLink="">By <span>My</span>self</h1>
+  </div>
+  <!-- <p class="subtitle prevent-select" id="subTitle" (mouseover)="subTitle($event)" data-value="Designed for my cats">{{subTitle_Header}}</p> -->
+  <ul class="navbar-list">
+      <li class="navbar-list-item">
+          <button  class="navbar-list-btn prevent-select" routerLink="" routerLinkActive="current-page" [routerLinkActiveOptions]="{ exact: true }">Home</button>
+      </li>
+      <li class="navbar-list-item">
+          <button id="profile"  class="navbar-list-btn prevent-select" (click)="goToUserProfile()">Profile</button>
+      </li>
+      <li class="navbar-list-item">
+          <button  class="navbar-list-btn prevent-select" routerLink="/underConstruction">Payment</button>
+      </li>
+  </ul>
+</div>

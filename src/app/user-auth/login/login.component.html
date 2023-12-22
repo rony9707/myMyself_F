@@ -1,0 +1,99 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css" />
+<div id="blur">
+  <appheader></appheader>
+  <app-dashboard></app-dashboard>
+  <div class="main-container-login">
+    <div class="sub-container">
+      <div class="login-header-text">
+        <h1>Sign in</h1>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="loginUser()" >
+
+        <!-- username field-->
+        <div class="input-div prevent-select input-div-flex">
+          <input type="text" class="input-field" placeholder="Enter your email or username"  
+          formControlName="username"
+          >
+        </div>
+
+        <!-- username valid text field-->
+        <div class="input-invalid-text-login" >
+          <span *ngIf="usernameValidator && usernameValidator.invalid && usernameValidator.touched">Username cannot be blank</span>
+        </div>
+
+
+        <!-- *TODO  FIX the font size of the tooltip in password  field-->
+        <!-- password field-->
+        <div class="input-div prevent-select fixToolTipCSS">
+          <input type="password" class="input-field" id="password-field-id" placeholder="Enter your password"  
+          formControlName="password"
+          (cut)="DisableCut($event)" (copy)="DisableCopy($event)" (paste)="DisablePaste($event)" 
+           matTooltip="Password must be between 8 to 16 characters, must have at least one lowercase character, one uppercase character, one number and one special character"
+          matTooltipPosition=after matTooltipShowDelay=200  matTooltipClass="tooltip"
+          >
+          <!-- password eye-->  
+          <i class="bi bi-eye-slash" id="togglePassword" (click)="passwordfield()"></i>
+        </div>
+        <!-- password valid text field-->
+        <div class="input-invalid-text-login" >
+          <span *ngIf="passwordValidator && passwordValidator.invalid && passwordValidator.touched">Password cannot be blank</span>
+        </div>
+
+
+        <!-- remember me -->
+        <div class="input-div prevent-select remember-me">
+          <input type="checkbox" class="remember-me-input" name="remember-me-input" id="remember-me-label" formControlName="rememberMe">
+           <label class = "remember-me-label" for="remember-me-label">Remember my email or username</label>
+        </div>
+
+        <!-- login button -->
+        <div class="input-div prevent-select">
+          <!-- <a  class="form-btn-login" (click)="login()" id="login-id" >Sign in</a> -->
+          <button type="submit" class="form-btn-login" [disabled]="loginForm.invalid" [disabled]="disableButton">Login</button>
+        </div>
+        <!-- [disabled]="loginForm.invalid" -->
+
+      </form>
+        <!-- forgot passowrd and signup button -->
+        <div class="input-div flex">
+          <button class="form-btn" (click)="clickHandler()">Forgot Password</button>
+          <button class="form-btn" routerLink="/register" >Sign Up</button>
+        </div>
+
+      
+    </div>
+  </div>
+  <app-footer class="footer"></app-footer>
+</div>
+
+
+<!-- Modal Popup -->
+  <!-- *TODO  ngIf does not let you use the dom, so need to use display:done instead of ngIf-->
+  <div class="hover_bkgr_fricc" *ngIf="ispopUpShow"  ClickOutsideDirective (click)="ClickedOut($event)">
+    <span class="helper"></span>
+    <div id="inside-popup-id" class="inside-popup">
+      <form [formGroup]="forgetPassword" (ngSubmit)="forgetPasswordEmail()">
+        <div class="main-modal">
+
+          <h1 class="flex-item-modal">Enter your email</h1>
+          
+
+          <input type="text" class="input-field" placeholder="Enter your email"   (keypress)="doNotLetTypeSpace($event)"
+          formControlName="email"
+          >
+
+          <!-- email valid text field-->
+          <div class="input-invalid-text-login email" >
+            <span *ngIf="forgetPassEmailValidator && forgetPassEmailValidator.invalid && forgetPassEmailValidator.touched">Your email is not valid</span>
+          </div>
+
+          <button type="submit" class="form-btn-login flex-item-modal" [disabled]="forgetPassword.invalid">Submit</button>
+          
+        </div>
+      </form>
+    
+      <a (click)="closePop()" class="flex-item-modal close-btn">Close</a>
+  </div>
+    
+</div>
+

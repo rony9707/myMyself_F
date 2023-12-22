@@ -1,0 +1,44 @@
+<appheader></appheader>
+<app-dashboard></app-dashboard>
+<div class= "main-container">
+
+  <div class="background" [ngStyle]="{
+    'background': 'url(/../assets/Wallpapers/' + imageName + '.jfif)',
+    'background-position': 'center center',
+    'background-size': 'cover'
+  }"></div>
+
+
+  <div class="user">
+    <img [src]="imageUrl" alt="Image" *ngIf="imageUrl" class="pro-pic">
+    <table>
+      <tr>
+        <td class="header-table">Name</td>
+        <td class="header-value">{{firstname + ' ' + lastname}}</td>
+      </tr>
+            
+      <tr>
+        <td class="header-table">Email</td>
+        <td class="header-value">{{email}}</td>
+      </tr>
+            
+      <tr>
+        <td class="header-table">Age</td>
+        <td class="header-value">{{age}}</td>
+      </tr>
+            
+      <tr>
+        <td class="header-table">Last Login</td>
+        <td class="header-value">{{LastLogin}}</td>
+      </tr>
+            
+    </table>
+  </div>
+
+  <div class="game">
+    
+  </div>
+
+</div>
+<app-footer class="footer"></app-footer>
+ 
