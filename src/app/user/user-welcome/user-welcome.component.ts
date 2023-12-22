@@ -74,9 +74,9 @@ export class UserWelcomeComponent implements OnInit {
         this.age = (currentYear - userYear).toString();
 
         if (currentMMDD > userMMDD) {
-          this.age
-        } else {
           this.age = (parseInt(this.age) - 1).toString()
+        } else {
+          this.age
         }
 
         const date = new Date(data.dteLastLogin);
