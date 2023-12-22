@@ -78,10 +78,9 @@ export class UserWelcomeComponent implements OnInit {
         } else {
           this.age
         }
-
-        const date = new Date(data.dteLastLogin);
+        const dteLastLoginF = data.dteLastLogin.replace(' at ', ', ')
+        const date = new Date(dteLastLoginF);
         const formattedDate = this.formatDate(date);
-
         setTimeout(() => {
           this.LastLogin = formattedDate;
           this.cdr.detectChanges();
