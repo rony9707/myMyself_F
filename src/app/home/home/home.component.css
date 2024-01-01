@@ -124,6 +124,7 @@ canvas {
   border-style: double;
   margin: 30px 0px 0px 0px;
   height: 100vh;
+  height: 100svh;
   border-radius:25px;
 }
 
