@@ -28,6 +28,8 @@ export class UserdataService {
   private resetPasswordBaseURL = `${this.baseURL}/reset-password`
   private updateLastLoginDateURL = `${this.baseURL}/lastLoginUpdate`
   private updatePasswordURL = `${this.baseURL}/resetPassword`
+  private submitScoreBoardURL = `${this.baseURL}/scoreboard`
+  private getLeaderBoardURL = `${this.baseURL}/leaderBoard`
   private autoLogout = 86400000
   // private autoLogout= 5000 
 
@@ -48,6 +50,18 @@ export class UserdataService {
 
   registerUser(user) {
     return this.http.post<any>(this.registerURL, user, {
+      withCredentials: true
+    })
+  }
+
+  submitScoreBoardUser(user) {
+    return this.http.post<any>(this.submitScoreBoardURL, user, {
+      withCredentials: true
+    })
+  }
+
+  getLeaderBoard() {
+    return this.http.get<any>(this.getLeaderBoardURL, {
       withCredentials: true
     })
   }

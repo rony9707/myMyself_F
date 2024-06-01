@@ -11,7 +11,7 @@
 
   <div class="user">
     <img [src]="imageUrl" alt="Image" *ngIf="imageUrl" class="pro-pic">
-    <table>
+    <table class="userInfoTable">
       <tr>
         <td class="header-table">Name</td>
         <td class="header-value">{{firstname + ' ' + lastname}}</td>
@@ -33,10 +33,81 @@
       </tr>
             
     </table>
+
   </div>
 
-  <div class="game">
+  <div class="game-main">
+    <div class="game" id="game" (click)="hasGameStarted && !restartGame ? showRippleEffect($event) : null">
+      <span id="ripple_effect" class="ripple"></span>
+      <button  class="showLeaderboards btn-design-showRanking" id="showLeaderboards" (click)="showLeaderboard()" >{{showLeaderboard_value}}</button>
+      <div class="score1" >Total Lives: {{targetVanishCount}}</div>
+      <button *ngIf="!hasGameStarted" class="StartGamebutton" id="StartGameButton" (click)="startGame()">Start Game</button>
+      <button [disabled]="isButtonDisabled" *ngIf="restartGame" class="StartGamebutton" id="ReStartGameButton" (click)="startGame()">Restart Game</button>
+      <div class="submit-buttom">
+        <button  class="submit-score" *ngIf="restartGame"  class="btn-submit" id="button" [ngClass]="buttonClasses" (click)="onClick()"  [disabled]="isButtonDisabled"></button>
+      </div>
+      <div class="score-info" *ngIf="restartGame">
+        <div class="row">
+          <div class="score">Timer: <span class="scoreCount">{{gameStartTime}} sec</span></div>
+          <div class="score">Target's Hit: <span class="scoreCount">{{score}}</span></div>
+        </div>
+        <div class="row">
+          <div class="score">Shots Taken: <span class="scoreCount">{{shotsTaken}}</span></div>
+          <div class="score">Accuracy: <span class="scoreCount">{{ accuracy ? accuracy.toFixed(2) + '%' : '0%' }}</span></div>
+        </div>
+      </div>
+      <img src="assets/game/target.svg" class="target" id="target"  alt="Target SVG">
+    </div>
+    <div class="scoreboard" id="scoreboard">
+      <!-- Timer: {{gameStartTime}}
+      Score: {{score}}
+      Target Vanish Count : {{targetVanishCount}}
+      Shots Taken :{{shotsTaken}}
+      Accuracy: {{ accuracy ? accuracy.toFixed(2) + '%' : '0%' }} -->
+
+      <!-- <table class="scoreboardTable">
+        <thead>
+          <tr class="scoreboardTable_header">
+            <th class="scoreboardTable_headerC" (click)="sortData('firstName')">First Name</th>
+            <th class="scoreboardTable_headerC" (click)="sortData('targetsHit')">Targets Hit</th>
+            <th class="scoreboardTable_headerC" (click)="sortData('Timer')">Timer</th>
+            <th class="scoreboardTable_headerC" (click)="sortData('shotsTaken')">Shots Taken</th>
+            <th class="scoreboardTable_headerC" (click)="sortData('Accuracy')">Accuracy</th>
+            <th class="scoreboardTable_headerC" (click)="sortData('dteSubmit')">Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of data">
+            <td class="scoreboardTable_RowrC">{{ item.firstName }}</td>
+            <td class="scoreboardTable_RowrC">{{ item.targetsHit }}</td>
+            <td class="scoreboardTable_RowrC">{{ item.Timer }}</td>
+            <td class="scoreboardTable_RowrC">{{ item.shotsTaken }}</td>
+            <td class="scoreboardTable_RowrC">{{ item.Accuracy }}</td>
+            <td class="scoreboardTable_RowrC">{{ item.dteSubmit | date: 'MMMM d, y, h:mm:ss a' }}</td>
+          </tr>
+        </tbody>
+      </table> -->
+      <label>
+        <button (click)="onBtnExport()" style="margin-bottom: 5px;" class="download-btn">Download Data</button>
+        <button  class="showLeaderboards btn-design-showRanking" style="margin-bottom: 5px;" id="showLeaderboards" (click)="showLeaderboard1()" >{{showLeaderboard1_value}}</button>
+      </label>
+      <ag-grid-angular class="tablesScoreBoard"
+      class="{{table_theme}}"
+      style="height: 94dvh; width:100%; "
+      [rowData]="rowData"
+      [columnDefs]="colDefs"
+      [animateRows]="true"
+      [defaultColDef]="defColDef"
+      (gridReady)="onGridReady($event)"
+    >
     
+    </ag-grid-angular>
+	  
+	  
+
+    </div>
+
+
   </div>
 
 </div>

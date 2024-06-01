@@ -1,4 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
+@import "ag-grid-community/dist/styles/ag-grid.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine-dark.css";
+@import "ag-grid-community/dist/styles/ag-theme-alpine.css";
+
 .font {
   font-family: 'Archivo', sans-serif;
 }
@@ -17,7 +21,6 @@ body {
   --btn-txt-color-dash-hover: rgb(3, 3, 3);
   --bkg-color-footer: #111;
   --bkg-color-footer-bottom: #000;
-  --footer-flicker-color: #f0f0f0;
   --bkg-color-form: #344D67;
   --form-btn: hsl(190deg, 30%, 15%);
   --form-btn-text: hsl(190deg, 10%, 95%);
@@ -60,7 +63,6 @@ body::-webkit-scrollbar-track:hover {
   --btn-txt-color-dash-hover: rgb(255, 255, 255);
   --bkg-color-footer: #888888;
   --bkg-color-footer-bottom: #000;
-  --footer-flicker-color: #f0f0f0;
   --bkg-color-form: #DEF5E5;
   --form-btn: #f3eae8;
   --form-btn-text: hsl(198, 21%, 12%);
@@ -77,6 +79,12 @@ body::-webkit-scrollbar-track:hover {
   --bg-color: #2C3333;
   --typewriterSpeed: 3s;
   --typewriterCharacters: 26;
+
+
+  --green: #ff7818;
+  --gray: #bbbbbb;
+
+  --footer-flicker-color: #f0f0f0;
 
 }
 

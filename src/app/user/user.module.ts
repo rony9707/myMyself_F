@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { UserWelcomeComponent } from './user-welcome/user-welcome.component';
 import { SharedModule } from '../shared/shared.module';
+import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -11,7 +12,8 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    AgGridModule
   ]
 })
 export class UserModule {
