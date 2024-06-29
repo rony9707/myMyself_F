@@ -150,9 +150,9 @@ export class UserWelcomeComponent implements OnInit {
       if (this.hasGameStarted == true && this.restartGame == false) {
         this.checkTargetHit();
       }
-      this.getScoreboardData();
     }, 1500);
 
+    this.getScoreboardData();
 
     //Table Data
     this.colDefs = [

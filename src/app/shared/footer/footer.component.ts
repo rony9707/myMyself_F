@@ -14,4 +14,8 @@ export class FooterComponent implements OnInit {
   ngOnInit(): void {
   }
   date = new Date();
+
+  goToMyWebsite(){
+    window.open('https://my-portfolio-1b0d8.web.app', '_blank');
+  }
 }
