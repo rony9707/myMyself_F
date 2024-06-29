@@ -10,6 +10,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { DatePipe } from '@angular/common';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { ImageCropperModule } from 'ngx-image-cropper';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -27,7 +28,8 @@ import { ImageCropperModule } from 'ngx-image-cropper';
     MatIconModule,
     ReactiveFormsModule,
     MatTooltipModule,
-    ImageCropperModule
+    ImageCropperModule,
+    RouterModule
   ],
   exports: [
     LoginComponent,

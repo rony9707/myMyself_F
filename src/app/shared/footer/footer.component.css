@@ -308,6 +308,7 @@
 
 .name-footer:hover {
   transition: margin 0.3s ease;
+  cursor: pointer;
 }
 
 .name-footer:hover {
